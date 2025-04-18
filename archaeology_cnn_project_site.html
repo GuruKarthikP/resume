@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archaeological Disk Analysis - CNN & Data Augmentation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #3e4e5e;
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    ul {
+      line-height: 1.7;
+    }
+    footer {
+      background: #3e4e5e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Magdalenian Disk Classification</h1>
+  <p>Deep Learning Project on Archaeological Image Analysis using CNN & Data Augmentation</p>
+</header>
+
+<section>
+  <h2>Project Overview</h2>
+  <p>This project explores the classification and stylistic analysis of Magdalenian perforated disks using deep learning. By blending and rotating archaeological disk images, we created an expanded dataset to train a Convolutional Neural Network (CNN) for identifying human-crafted engravings.</p>
+</section>
+
+<section>
+  <h2>Data Augmentation Pipeline</h2>
+  <ul>
+    <li><strong>Input Disks:</strong> Archaeological images with human and non-human engravings</li>
+    <li><strong>Transformations:</strong> Rotation (90°, 180°, 270°), Horizontal/Vertical Flipping</li>
+    <li><strong>Blending:</strong> Scatter-mask based image mixing to simulate real-world degradation and diversity</li>
+    <li><strong>Patch Extraction:</strong> Splitting disks into 8x8 image patches for CNN input</li>
+  </ul>
+  <p><strong>Original Samples:</strong></p>
+  <img src="1.png" alt="Disk 1">
+  <img src="9 (1).png" alt="Disk 2">
+  <p><strong>Blended Result:</strong></p>
+  <img src="7horizontal_flip_blended_6_8.jpg" alt="Blended Disk">
+</section>
+
+<section>
+  <h2>CNN Architecture</h2>
+  <ul>
+    <li>Input: Augmented 8x8 disk image patches</li>
+    <li>Convolutional layers with ReLU activation</li>
+    <li>MaxPooling layers to downsample</li>
+    <li>Fully connected Dense layers</li>
+    <li>Softmax output layer: Human vs. Non-Human</li>
+    <li>5-fold Cross Validation for robust evaluation</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Results</h2>
+  <ul>
+    <li>Blending & flipping increased training data variety</li>
+    <li>Model trained with augmented data showed improved accuracy</li>
+    <li>CNN accurately classified human vs. non-human patterns on disks</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Conclusion</h2>
+  <p>This interdisciplinary project successfully combined archaeology and AI to analyze disk engravings. Data augmentation and CNNs provided scalable tools to explore human symbolism in ancient artifacts.</p>
+</section>
+
+<footer>
+  <p>Guru Karthik Reddy Pathakota • Summer 2024 • UNCG</p>
+</footer>
+
+</body>
+</html>
