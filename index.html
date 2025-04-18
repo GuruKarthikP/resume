@@ -1,84 +1,100 @@
 <!DOCTYPE html>
-<html lang=\"en\">
+<html lang="en">
 <head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>Karthik Pathakota - Resume</title>
-    <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthik Pathakota - Professional Resume</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #fff; }
-        .header { text-align: center; background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') center/cover no-repeat; padding: 60px 20px; }
-        .header h1 { font-size: 3em; margin: 0; }
-        .header p { font-size: 1.2em; }
-        .section { padding: 50px 20px; }
-        .chart-container { width: 80%; margin: auto; }
-        .experience, .education { background: rgba(0, 0, 0, 0.6); padding: 15px; border-radius: 8px; margin-bottom: 20px; }
-        .experience h3, .education h4 { margin-top: 0; }
-        .skills-section { background: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39c') center/cover no-repeat; }
-        .experience-section { background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d') center/cover no-repeat; }
-        .education-section { background: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6') center/cover no-repeat; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #fff;
+        }
+        .header, .skills, .experience, .education {
+            padding: 40px 20px;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+        .header {
+            background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
+        }
+        .skills {
+            background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
+        }
+        .experience {
+            background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf');
+        }
+        .education {
+            background-image: url('https://images.unsplash.com/photo-1503676382389-4809596d5290');
+        }
+        .section-content {
+            background: rgba(0,0,0,0.6);
+            display: inline-block;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 800px;
+        }
     </style>
 </head>
 <body>
 
-<div class=\"header\">
-    <h1>Karthik Pathakota</h1>
-    <p>Data Engineer | Cloud & Security Professional</p>
-    <p>Email: example@email.com | LinkedIn: <a style=\"color: #fff;\" href=\"#\">linkedin.com/in/karthik</a> | GitHub: <a style=\"color: #fff;\" href=\"#\">github.com/karthik</a></p>
-</div>
-
-<div class=\"section skills-section\">
-    <h2 style=\"text-align: center;\">Technical Skills</h2>
-    <div class=\"chart-container\">
-        <canvas id=\"skillsChart\"></canvas>
+<div class="header">
+    <div class="section-content">
+        <h1>Karthik Pathakota</h1>
+        <p>Data Engineer | Cloud & Security Professional</p>
+        <p>Email: your-email@example.com | LinkedIn: <a style="color:#fff;" href="#">linkedin.com/in/karthik</a> | GitHub: <a style="color:#fff;" href="#">github.com/karthik</a></p>
     </div>
 </div>
 
-<div class=\"section experience-section\">
-    <h2 style=\"text-align: center;\">Work Experience</h2>
-    <div class=\"experience\">
+<div class="skills">
+    <div class="section-content">
+        <h2>Technical Skills</h2>
+        <canvas id="skillsChart"></canvas>
+    </div>
+</div>
+
+<div class="experience">
+    <div class="section-content">
+        <h2>Professional Experience</h2>
         <h3>Data Engineer | Unisys</h3>
-        <p>Worked extensively with financial data pipelines, data quality assurance, and analytics.</p>
-    </div>
-    <div class=\"experience\">
+        <p>Extensive experience in financial data pipelines, data cleansing, ETL processes, and analytics.</p>
         <h3>Security Engineer | AWS Global Services</h3>
-        <p>Managed secure architecture design, security automation, and application security reviews.</p>
+        <p>Led initiatives in secure architecture, security automation, vulnerability assessment, and compliance.</p>
     </div>
 </div>
 
-<div class=\"section education-section\">
-    <h2 style=\"text-align: center;\">Education & Certifications</h2>
-    <div class=\"education\">
-        <h4>Master's in Computer Science</h4>
-        <p>University of North Carolina at Greensboro (2022–2024)</p>
-    </div>
-    <div class=\"education\">
-        <h4>Bachelor's in Computer Science</h4>
-        <p>GITAM University (2016–2020)</p>
+<div class="education">
+    <div class="section-content">
+        <h2>Education & Certifications</h2>
+        <h3>Master of Science in Computer Science</h3>
+        <p>University of North Carolina at Greensboro (2022-2024)</p>
+        <h3>Bachelor of Technology in Computer Science</h3>
+        <p>GITAM University (2016-2020)</p>
     </div>
 </div>
 
 <script>
 const ctx = document.getElementById('skillsChart');
-const skillsChart = new Chart(ctx, {
+new Chart(ctx, {
     type: 'radar',
     data: {
         labels: ['SQL', 'Python', 'AWS', 'Azure', 'Spark', 'Security'],
         datasets: [{
-            label: 'Skill Proficiency',
-            data: [90, 85, 75, 80, 70, 85],
-            backgroundColor: 'rgba(255,255,255,0.3)',
-            borderColor: '#fff',
-            borderWidth: 2
+            label: 'Proficiency (%)',
+            data: [90, 85, 80, 75, 70, 85],
+            backgroundColor: 'rgba(255,255,255,0.2)',
+            borderColor: '#ffffff',
+            borderWidth: 1
         }]
     },
     options: {
         scales: {
             r: {
-                angleLines: { display: true },
                 suggestedMin: 0,
                 suggestedMax: 100,
-                ticks: { backdropColor: 'rgba(0,0,0,0)' }
+                ticks: { backdropColor: 'transparent' }
             }
         }
     }
